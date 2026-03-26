@@ -1,0 +1,28 @@
+title: "[ blog name ]"
+description: "Red team. Penetration testing. Real stories."
+author: "IIDavi"
+email: ""
+url: "https://iidavi.github.io"
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Theme — minimal, terminal-style
+theme: minima
+
+# Navigation
+header_pages:
+  - about.md
+  - talks.md
+
+# Syntax highlighting
+kramdown:
+  syntax_highlighter: rouge
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
