@@ -111,7 +111,7 @@ a:hover {
   display: flex;
   align-items: center;
   height: 56px;
-  padding: 0 18px;
+  padding: 0 16px;
   border-left: 1px solid var(--border);
   font-size: 11px;
   color: var(--text-muted);
@@ -158,9 +158,9 @@ a:hover {
    ============================================= */
 
 .page-wrap {
-  max-width: 780px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 0 0 80px;
+  padding: 0 0 44px;
 }
 
 /* =============================================
@@ -168,14 +168,14 @@ a:hover {
    ============================================= */
 
 .hero {
-  padding: 56px 32px 40px;
+  padding: 38px 32px 28px;
   border-bottom: 1px solid var(--border);
 }
 
 .hero-prompt {
   font-size: 11px;
   color: var(--text-dim);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -187,11 +187,11 @@ a:hover {
 }
 
 .hero-title {
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--text);
-  line-height: 1.18;
-  margin-bottom: 14px;
+  line-height: 1.15;
+  margin-bottom: 10px;
 }
 
 .hero-title .hl {
@@ -203,8 +203,8 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 15px;
   color: var(--text-muted);
-  line-height: 1.85;
-  max-width: 560px;
+  line-height: 1.7;
+  max-width: 680px;
 }
 
 /* =============================================
@@ -219,7 +219,7 @@ a:hover {
 
 .stat {
   flex: 1;
-  padding: 16px 32px;
+  padding: 14px 24px;
   border-right: 1px solid var(--border);
 }
 
@@ -228,17 +228,17 @@ a:hover {
 }
 
 .stat-num {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--accent);
   text-shadow: 0 0 10px rgba(0, 255, 225, 0.12);
 }
 
 .stat-label {
-  font-size: 10px;
+  font-size: 9px;
   color: var(--text-dim);
   letter-spacing: 0.12em;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 /* =============================================
@@ -251,9 +251,9 @@ a:hover {
 
 .post-item {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   align-items: flex-start;
-  padding: 24px 32px;
+  padding: 18px 32px;
   border-bottom: 1px solid var(--border-dim);
   transition: background 0.18s ease, border-color 0.18s ease;
 }
@@ -274,7 +274,7 @@ a:hover {
 .post-cat {
   font-size: 10px;
   letter-spacing: 0.14em;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
 }
 
 .cat-web       { color: var(--accent); }
@@ -285,11 +285,11 @@ a:hover {
 
 .post-title {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 7px;
-  line-height: 1.45;
+  margin-bottom: 5px;
+  line-height: 1.4;
   text-decoration: none;
   display: block;
 }
@@ -302,13 +302,13 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 14px;
   color: var(--text-muted);
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 .post-meta {
   font-size: 10px;
   color: var(--text-dim);
-  margin-top: 9px;
+  margin-top: 6px;
   letter-spacing: 0.06em;
 }
 
@@ -317,7 +317,7 @@ a:hover {
    ============================================= */
 
 .post-header {
-  padding: 42px 32px 34px;
+  padding: 34px 32px 28px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -325,7 +325,7 @@ a:hover {
   font-size: 10px;
   color: var(--text-faint);
   letter-spacing: 0.08em;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .post-breadcrumb a {
@@ -334,21 +334,21 @@ a:hover {
 }
 
 .post-header .post-cat {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .post-header h1 {
   font-family: var(--font-sans);
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--text);
-  line-height: 1.24;
-  margin-bottom: 16px;
+  line-height: 1.22;
+  margin-bottom: 14px;
 }
 
 .post-header-meta {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   font-size: 11px;
   color: var(--text-muted);
   flex-wrap: wrap;
@@ -360,15 +360,15 @@ a:hover {
 
 /* Post body */
 .post-body {
-  padding: 34px 32px 0;
+  padding: 28px 32px 0;
   font-family: var(--font-sans);
 }
 
 .post-body p {
   font-size: 15px;
   color: var(--text-muted);
-  line-height: 1.9;
-  margin-bottom: 20px;
+  line-height: 1.82;
+  margin-bottom: 18px;
 }
 
 .post-body h2 {
@@ -377,7 +377,7 @@ a:hover {
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.1em;
-  margin: 38px 0 14px;
+  margin: 32px 0 12px;
 }
 
 .post-body h2::before {
@@ -389,7 +389,7 @@ a:hover {
   font-size: 12px;
   color: var(--purple);
   letter-spacing: 0.08em;
-  margin: 24px 0 10px;
+  margin: 22px 0 10px;
 }
 
 .post-body ul,
@@ -397,8 +397,8 @@ a:hover {
   font-size: 15px;
   color: var(--text-muted);
   padding-left: 22px;
-  margin-bottom: 20px;
-  line-height: 1.9;
+  margin-bottom: 18px;
+  line-height: 1.82;
 }
 
 .post-body li {
@@ -417,21 +417,20 @@ a:hover {
 .post-body blockquote {
   border-left: 2px solid var(--accent);
   padding: 6px 0 6px 18px;
-  margin: 24px 0;
+  margin: 22px 0;
   font-size: 15px;
   color: #c7c7d8;
   font-style: italic;
   background: rgba(255, 255, 255, 0.015);
 }
 
-/* Code blocks */
 .post-body pre {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 18px 20px;
+  padding: 16px 18px;
   overflow-x: auto;
-  margin: 22px 0;
+  margin: 20px 0;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--accent);
@@ -461,9 +460,9 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 24px 32px 32px;
+  padding: 20px 32px 24px;
   border-top: 1px solid var(--border-dim);
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .post-tag {
@@ -482,28 +481,28 @@ a:hover {
    ============================================= */
 
 .about-wrap {
-  padding: 42px 32px;
+  padding: 34px 32px;
 }
 
 .about-header {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding-bottom: 32px;
+  gap: 18px;
+  padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 
 .about-avatar {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--bg-card);
   border: 1px solid rgba(0, 255, 225, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--accent);
   flex-shrink: 0;
@@ -511,7 +510,7 @@ a:hover {
 }
 
 .about-name {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 4px;
@@ -527,22 +526,22 @@ a:hover {
   font-size: 10px;
   color: var(--text-faint);
   letter-spacing: 0.16em;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .about-bio {
   font-family: var(--font-sans);
   font-size: 15px;
   color: var(--text-muted);
-  line-height: 1.9;
-  margin-bottom: 36px;
+  line-height: 1.82;
+  margin-bottom: 28px;
 }
 
 .about-skills {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 
 .skill-tag {
@@ -583,10 +582,10 @@ a:hover {
   border: 1px solid var(--border);
   padding: 8px 16px;
   border-radius: 5px;
-  letter-spacing: 0.08em;
   transition: all 0.18s ease;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.015);
+  letter-spacing: 0.08em;
 }
 
 .about-link:hover {
@@ -602,15 +601,16 @@ a:hover {
 
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 20px 32px;
+  padding: 14px 32px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 10px;
   color: var(--text-faint);
   letter-spacing: 0.08em;
-  max-width: 780px;
+  max-width: 920px;
   margin: 0 auto;
+  gap: 18px;
 }
 
 .footer-accent {
@@ -620,6 +620,13 @@ a:hover {
 /* =============================================
    RESPONSIVE
    ============================================= */
+
+@media (max-width: 920px) {
+  .page-wrap,
+  .site-footer {
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 780px) {
   .site-nav {
@@ -645,15 +652,20 @@ a:hover {
   }
 
   .post-item {
-    padding: 20px 16px;
+    padding: 18px 16px;
   }
 
   .stat {
-    padding: 14px 16px;
+    padding: 12px 16px;
+  }
+
+  .post-tags {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .site-footer {
-    padding: 16px;
+    padding: 14px 16px 18px;
   }
 }
 
@@ -698,7 +710,7 @@ a:hover {
   }
 
   .hero-title {
-    font-size: 26px;
+    font-size: 25px;
   }
 
   .hero-sub,
@@ -710,7 +722,7 @@ a:hover {
   }
 
   .post-header h1 {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .site-footer {
