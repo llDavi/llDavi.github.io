@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="{{ '/' | relative_url }}" class="nav-logo">
+      <span class="bracket">[</span>{{ site.title }}<span class="bracket">]</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>~/blog</a></li>
+      <li><a href="{{ '/about' | relative_url }}" {% if page.url contains 'about' %}class="active"{% endif %}>~/about</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-wrap">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <span><span class="footer-accent">$</span> {{ site.title }} · {{ site.description }}</span>
+    <span>built with <span class="footer-accent">Jekyll</span> + <span class="footer-accent">GitHub Pages</span></span>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="hero-prompt"><span class="sym">$</span> whoami</div>
+  <h1 class="hero-title">{{ site.tagline | default: "Sicurezza informatica.<br><span class='hl'>Senza filtri.</span>" }}</h1>
+  <p class="hero-sub">{{ site.description }}</p>
+</section>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">{{ site.posts.size }}</div>
+    <div class="stat-label">ARTICOLI</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">{{ site.categories.size }}</div>
+    <div class="stat-label">CATEGORIE</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">{{ site.time | date: '%Y' }}</div>
+    <div class="stat-label">ANNO</div>
+  </div>
+</div>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-item">
+    <span class="post-idx">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+    <div>
+      {% if post.categories[0] %}
+      <div class="post-cat cat-{{ post.categories[0] | downcase }}">// {{ post.categories[0] | upcase }}</div>
+      {% endif %}
+      <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% if post.excerpt %}
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+      {% endif %}
+      <div class="post-meta">{{ post.date | date: '%d %b %Y' }}{% if post.read_time %} · {{ post.read_time }} min read{% endif %}</div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

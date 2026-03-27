@@ -1,22 +1,40 @@
 ---
-layout: page
-title: whoami
+layout: default
+title: About
 permalink: /about/
 ---
 
-Red team operator and penetration tester with 10+ years in offensive security.
+<div class="about-wrap">
 
-Background in military and government environments — now operating in the private sector.
+  <div class="about-header">
+    <div class="about-avatar">D</div>
+    <div>
+      <div class="about-name">IlDavi</div>
+      <div class="about-role">// SECURITY RESEARCHER &amp; EDUCATOR</div>
+    </div>
+  </div>
 
-I write about what I've seen, what I've broken, and what actually works when it comes to attacking and defending real systems.
+  <div class="about-section-title">// BIO</div>
+  <p class="about-bio">
+    Mi occupo di sicurezza offensiva e difensiva. Ho creato questo blog per condividere quello che imparo —
+    in modo tecnico ma accessibile a tutti, dal curioso al professionista.
+    Qui trovi pentesting, red team ops, awareness e molto altro.
+  </p>
 
-**Focus areas**
+  <div class="about-section-title">// STACK</div>
+  <div class="about-skills">
+    <span class="skill-tag skill-cyan">Penetration Testing</span>
+    <span class="skill-tag skill-cyan">Red Team</span>
+    <span class="skill-tag skill-purple">OSINT</span>
+    <span class="skill-tag skill-purple">Web Security</span>
+    <span class="skill-tag skill-amber">Linux</span>
+    <span class="skill-tag skill-amber">Python</span>
+  </div>
 
-- Red team operations and adversary simulation
-- Web application and infrastructure penetration testing
-- Physical security assessments
-- Security awareness — for technical and non-technical audiences
+  <div class="about-section-title">// LINKS</div>
+  <div class="about-links">
+    <a class="about-link" href="https://github.com/IIDavi" target="_blank">GitHub</a>
+    <a class="about-link" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  </div>
 
----
-
-*Everything published here is based on authorized engagements or controlled environments. All case studies are anonymized.*
+</div>

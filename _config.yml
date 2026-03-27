@@ -1,28 +1,33 @@
-title: "[ blog name ]"
-description: "Red team. Penetration testing. Real stories."
-author: "IIDavi"
-email: ""
+title: IlDavi
+description: "Pentesting, red team, awareness. Contenuti tecnici per chi vuole capire davvero — dal principiante al professionista."
+tagline: "Sicurezza informatica.<br><span class='hl'>Senza filtri.</span>"
+baseurl: ""
 url: "https://iidavi.github.io"
 
+author:
+  name: IlDavi
+
 # Build
-markdown: kramdown
-highlighter: rouge
-permalink: /:year/:month/:day/:title/
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
 
-# Theme — minimal, terminal-style
-theme: minima
-
-# Navigation
-header_pages:
-  - about.md
-  - talks.md
-
-# Syntax highlighting
-kramdown:
-  syntax_highlighter: rouge
+# Permalinks
+permalink: /:categories/:title/
 
 # Exclude from build
 exclude:
-  - README.md
   - Gemfile
   - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+
+# Markdown
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
