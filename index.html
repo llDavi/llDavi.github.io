@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NullSec — Cybersecurity Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        NullSec
+      </a>
+
+      <div class="nav-center">
+        <a href="#" class="nav-link active">Research</a>
+        <a href="#" class="nav-link">Tools</a>
+        <a href="#" class="nav-link">About</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">EN</button>
+          <span class="lang-sep">·</span>
+          <button class="lang-btn" data-lang="it" onclick="switchLang('it')">IT</button>
+          <span class="lang-sep">·</span>
+          <button class="lang-btn" data-lang="es" onclick="switchLang('es')">ES</button>
+        </div>
+        <a href="#" class="btn-primary">RSS Feed</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="dot-pulse"></span>
+          <span class="mono" data-en="Security Research & Analysis" data-it="Ricerca & Analisi di Sicurezza" data-es="Investigación & Análisis de Seguridad">Security Research & Analysis</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-en="Thinking Like" data-it="Pensare Come" data-es="Pensar Como">Thinking Like</span><br />
+          <span class="text-gradient" data-en="the Attacker" data-it="l'Attaccante" data-es="el Atacante">the Attacker</span>
+        </h1>
+        <p class="hero-sub" data-en="In-depth research on vulnerabilities, exploit techniques, and defensive strategies. No noise, just signal." data-it="Ricerche approfondite su vulnerabilità, tecniche di exploit e strategie difensive. Niente rumore, solo segnale." data-es="Investigación en profundidad sobre vulnerabilidades, técnicas de exploit y estrategias defensivas. Sin ruido, solo señal.">
+          In-depth research on vulnerabilities, exploit techniques, and defensive strategies. No noise, just signal.
+        </p>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+            <span class="t-title mono">~/nullsec</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-prompt">$</span> <span class="mono t-cmd">whoami</span></div>
+            <div class="t-line"><span class="mono t-out">security_researcher</span></div>
+            <div class="t-line t-gap"><span class="t-prompt">$</span> <span class="mono t-cmd">cat mission.txt</span></div>
+            <div class="t-line"><span class="mono t-out">offensive mindset · defensive purpose</span></div>
+            <div class="t-line t-gap"><span class="t-prompt">$</span> <span class="mono t-cmd cursor-blink">_</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Stat Cards -->
+      <div class="hero-right">
+        <div class="stat-card stat-green">
+          <div class="stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="stat-value">48</div>
+          <div class="stat-label mono" data-en="Articles Published" data-it="Articoli Pubblicati" data-es="Artículos Publicados">Articles Published</div>
+          <div class="stat-sub">+12 this year</div>
+        </div>
+
+        <div class="stat-card stat-blue">
+          <div class="stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="stat-value">9</div>
+          <div class="stat-label mono" data-en="Categories" data-it="Categorie" data-es="Categorías">Categories</div>
+          <div class="stat-sub">web · malware · forensics…</div>
+        </div>
+
+        <div class="stat-card stat-purple">
+          <div class="stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="stat-value">2025</div>
+          <div class="stat-label mono" data-en="Active Since" data-it="Attivo Dal" data-es="Activo Desde">Active Since</div>
+          <div class="stat-sub">est. January 2025</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider">
+    <div class="container">
+      <div class="divider-line"></div>
+    </div>
+  </div>
+
+  <!-- ARTICLES -->
+  <section class="articles">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag mono" data-en="Latest Research" data-it="Ultime Ricerche" data-es="Últimas Investigaciones">Latest Research</span>
+          <h2 class="section-title" data-en="Recent Posts" data-it="Post Recenti" data-es="Publicaciones Recientes">Recent Posts</h2>
+        </div>
+        <a href="#" class="btn-ghost mono" data-en="View all →" data-it="Vedi tutti →" data-es="Ver todos →">View all →</a>
+      </div>
+
+      <div class="articles-grid">
+
+        <article class="article-card featured-card">
+          <div class="card-accent card-accent-green"></div>
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="tag tag-red">CVE</span>
+              <span class="tag tag-blue">Web Security</span>
+              <time class="mono card-date">Jun 12, 2025</time>
+            </div>
+            <h3 class="card-title">Exploiting SSRF in Modern Cloud Architectures: A Deep Dive</h3>
+            <p class="card-excerpt">How attackers chain SSRF vulnerabilities to pivot through IMDSv1 endpoints and exfiltrate IAM credentials from AWS environments.</p>
+            <div class="card-footer">
+              <a href="#" class="card-link mono" data-en="Read more →" data-it="Leggi →" data-es="Leer →">Read more →</a>
+              <span class="read-time mono">8 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="card-accent card-accent-blue"></div>
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="tag tag-purple">Malware</span>
+              <span class="tag tag-blue">Reverse Engineering</span>
+              <time class="mono card-date">Jun 05, 2025</time>
+            </div>
+            <h3 class="card-title">Unpacking a Loader: Static Analysis Without a Sandbox</h3>
+            <p class="card-excerpt">Step-by-step walkthrough of manually unpacking an obfuscated .NET loader using dnSpy and de4dot.</p>
+            <div class="card-footer">
+              <a href="#" class="card-link mono">Read more →</a>
+              <span class="read-time mono">11 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="card-accent card-accent-purple"></div>
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="tag tag-green">CTF</span>
+              <span class="tag tag-blue">Forensics</span>
+              <time class="mono card-date">May 28, 2025</time>
+            </div>
+            <h3 class="card-title">Memory Forensics: Extracting Credentials from LSASS Dumps</h3>
+            <p class="card-excerpt">Hands-on guide to analyzing memory dumps with Volatility 3 and identifying credential caches in Windows environments.</p>
+            <div class="card-footer">
+              <a href="#" class="card-link mono">Read more →</a>
+              <span class="read-time mono">9 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="card-accent card-accent-green"></div>
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="tag tag-blue">Red Team</span>
+              <span class="tag tag-purple">Active Directory</span>
+              <time class="mono card-date">May 18, 2025</time>
+            </div>
+            <h3 class="card-title">Kerberoasting at Scale: Beyond the Basics</h3>
+            <p class="card-excerpt">Advanced Kerberoasting techniques including AS-REP roasting, targeted SPN enumeration, and hash cracking optimizations.</p>
+            <div class="card-footer">
+              <a href="#" class="card-link mono">Read more →</a>
+              <span class="read-time mono">14 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="card-accent card-accent-blue"></div>
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="tag tag-red">CVE</span>
+              <span class="tag tag-green">Linux</span>
+              <time class="mono card-date">May 10, 2025</time>
+            </div>
+            <h3 class="card-title">CVE-2025-0215: Local Privilege Escalation in the Linux Kernel</h3>
+            <p class="card-excerpt">Technical breakdown of a race condition vulnerability in the io_uring subsystem and its exploitation on Ubuntu 24.04.</p>
+            <div class="card-footer">
+              <a href="#" class="card-link mono">Read more →</a>
+              <span class="read-time mono">16 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="card-accent card-accent-purple"></div>
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="tag tag-purple">OSINT</span>
+              <span class="tag tag-blue">Recon</span>
+              <time class="mono card-date">Apr 29, 2025</time>
+            </div>
+            <h3 class="card-title">Building a Passive Recon Pipeline with Open Source Tools</h3>
+            <p class="card-excerpt">Automate subdomain enumeration, port scanning and exposure analysis using a composable shell-based workflow.</p>
+            <div class="card-footer">
+              <a href="#" class="card-link mono">Read more →</a>
+              <span class="read-time mono">7 min read</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider">
+    <div class="container">
+      <div class="divider-line"></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES STRIP -->
+  <section class="categories">
+    <div class="container">
+      <div class="categories-inner">
+        <span class="cat-label mono" data-en="Topics:" data-it="Argomenti:" data-es="Temas:">Topics:</span>
+        <div class="cat-pills">
+          <a href="#" class="cat-pill">Web Security</a>
+          <a href="#" class="cat-pill">Malware Analysis</a>
+          <a href="#" class="cat-pill">Active Directory</a>
+          <a href="#" class="cat-pill">CTF Writeups</a>
+          <a href="#" class="cat-pill">Forensics</a>
+          <a href="#" class="cat-pill">Red Teaming</a>
+          <a href="#" class="cat-pill">OSINT</a>
+          <a href="#" class="cat-pill">Reverse Engineering</a>
+          <a href="#" class="cat-pill">Linux Security</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo footer-logo">
+          <span class="logo-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          NullSec
+        </a>
+        <p class="footer-tagline mono" data-en="Offensive mindset. Defensive purpose." data-it="Mentalità offensiva. Scopo difensivo." data-es="Mentalidad ofensiva. Propósito defensivo.">Offensive mindset. Defensive purpose.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" class="footer-link">GitHub</a>
+        <a href="#" class="footer-link">Twitter</a>
+        <a href="#" class="footer-link">RSS</a>
+        <a href="#" class="footer-link">Contact</a>
+      </div>
+      <p class="footer-copy mono">© 2025 NullSec · <span data-en="All rights reserved" data-it="Tutti i diritti riservati" data-es="Todos los derechos reservados">All rights reserved</span></p>
+    </div>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
