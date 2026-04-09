@@ -1,295 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NullSec — Cybersecurity Research</title>
+  <title data-en="Davi — Cybersecurity Enthusiast" data-it="Davi — Appassionato di Cybersecurity" data-es="Davi — Entusiasta de Ciberseguridad">Davi — Cybersecurity Enthusiast</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
 </head>
-<body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="#" class="logo">
-        <span class="logo-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </span>
-        NullSec
-      </a>
+<body class="bg-gray-900 text-white min-h-screen">
 
-      <div class="nav-center">
-        <a href="#" class="nav-link active">Research</a>
-        <a href="#" class="nav-link">Tools</a>
-        <a href="#" class="nav-link">About</a>
-      </div>
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-lg border-b border-gray-800 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+            <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <span class="text-xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Davi</span>
+        </a>
 
-      <div class="nav-right">
-        <div class="lang-switch" id="langSwitch">
-          <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">EN</button>
-          <span class="lang-sep">·</span>
-          <button class="lang-btn" data-lang="it" onclick="switchLang('it')">IT</button>
-          <span class="lang-sep">·</span>
-          <button class="lang-btn" data-lang="es" onclick="switchLang('es')">ES</button>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-300 hover:text-emerald-400 transition-colors duration-200 font-medium">Research</a>
+          <a href="tools.html" class="text-gray-300 hover:text-emerald-400 transition-colors duration-200 font-medium">Tools</a>
+          <a href="about.html" class="text-gray-300 hover:text-emerald-400 transition-colors duration-200 font-medium">About</a>
         </div>
-        <a href="#" class="btn-primary">RSS Feed</a>
+
+        <!-- Language Switch -->
+        <div class="flex items-center space-x-4">
+          <div class="hidden sm:flex items-center space-x-1 bg-gray-800 rounded-lg p-1">
+            <button class="lang-btn active px-3 py-1 text-xs font-medium text-gray-400 hover:text-emerald-400 rounded-md transition-colors duration-200" data-lang="en" onclick="switchLang('en')">EN</button>
+            <span class="text-gray-600">·</span>
+            <button class="lang-btn px-3 py-1 text-xs font-medium text-gray-400 hover:text-emerald-400 rounded-md transition-colors duration-200" data-lang="it" onclick="switchLang('it')">IT</button>
+            <span class="text-gray-600">·</span>
+            <button class="lang-btn px-3 py-1 text-xs font-medium text-gray-400 hover:text-emerald-400 rounded-md transition-colors duration-200" data-lang="es" onclick="switchLang('es')">ES</button>
+          </div>
+
+          <a href="#" class="hidden sm:inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-900 font-semibold rounded-lg hover:from-emerald-400 hover:to-cyan-400 transition-all duration-200 transform hover:scale-105">
+            RSS Feed
+          </a>
+
+          <!-- Mobile menu button -->
+          <button class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors duration-200">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-inner">
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+        <!-- Hero Content -->
+        <div class="space-y-8">
+          <div class="flex items-center space-x-3" data-aos="fade-right" data-aos-delay="100">
+            <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+            <span class="text-emerald-400 font-medium text-sm uppercase tracking-wider" data-en="Security Research & Analysis" data-it="Ricerca & Analisi di Sicurezza" data-es="Investigación & Análisis de Seguridad">Security Research & Analysis</span>
+          </div>
 
-      <!-- Left -->
-      <div class="hero-left">
-        <div class="hero-eyebrow">
-          <span class="dot-pulse"></span>
-          <span class="mono" data-en="Security Research & Analysis" data-it="Ricerca & Analisi di Sicurezza" data-es="Investigación & Análisis de Seguridad">Security Research & Analysis</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" data-aos="fade-up" data-aos-delay="200">
+            <span data-en="Thinking Like" data-it="Pensare Come" data-es="Pensar Como">Thinking Like</span>
+            <span class="bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">the Attacker</span>
+          </h1>
+
+          <p class="text-lg text-gray-300 leading-relaxed max-w-lg" data-aos="fade-up" data-aos-delay="300" data-en="In-depth research on vulnerabilities, exploit techniques, and defensive strategies. No noise, just signal." data-it="Ricerche approfondite su vulnerabilità, tecniche di exploit e strategie difensive. Niente rumore, solo segnale." data-es="Investigación en profundidad sobre vulnerabilidades, técnicas de exploit y estrategias defensivas. Sin ruido, solo señal.">
+            In-depth research on vulnerabilities, exploit techniques, and defensive strategies. No noise, just signal.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400">
+            <a href="#articles" class="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-900 font-semibold rounded-xl hover:from-emerald-400 hover:to-cyan-400 transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25">
+              Explore Research
+            </a>
+            <a href="tools.html" class="inline-flex items-center justify-center px-8 py-3 border border-gray-700 text-gray-300 font-semibold rounded-xl hover:border-emerald-400 hover:text-emerald-400 transition-all duration-200">
+              View Tools
+            </a>
+          </div>
         </div>
-        <h1 class="hero-title">
-          <span data-en="Thinking Like" data-it="Pensare Come" data-es="Pensar Como">Thinking Like</span><br />
-          <span class="text-gradient" data-en="the Attacker" data-it="l'Attaccante" data-es="el Atacante">the Attacker</span>
-        </h1>
-        <p class="hero-sub" data-en="In-depth research on vulnerabilities, exploit techniques, and defensive strategies. No noise, just signal." data-it="Ricerche approfondite su vulnerabilità, tecniche di exploit e strategie difensive. Niente rumore, solo segnale." data-es="Investigación en profundidad sobre vulnerabilidades, técnicas de exploit y estrategias defensivas. Sin ruido, solo señal.">
-          In-depth research on vulnerabilities, exploit techniques, and defensive strategies. No noise, just signal.
+
+        <!-- Hero Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" data-aos="fade-left" data-aos-delay="300">
+          <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/10">
+            <div class="text-3xl font-bold text-emerald-400 mb-2" data-en="50+" data-it="50+" data-es="50+">50+</div>
+            <div class="text-sm text-gray-400 uppercase tracking-wider" data-en="Research Papers" data-it="Articoli Ricerca" data-es="Artículos Investigación">Research Papers</div>
+          </div>
+
+          <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10">
+            <div class="text-3xl font-bold text-cyan-400 mb-2" data-en="CVE" data-it="CVE" data-es="CVE">CVE</div>
+            <div class="text-sm text-gray-400 uppercase tracking-wider" data-en="Discovered" data-it="Scoperti" data-es="Descubiertos">Discovered</div>
+          </div>
+
+          <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10">
+            <div class="text-3xl font-bold text-purple-400 mb-2" data-en="10K+" data-it="10K+" data-es="10K+">10K+</div>
+            <div class="text-sm text-gray-400 uppercase tracking-wider" data-en="Readers" data-it="Lettori" data-es="Lectores">Readers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Carousel -->
+  <section id="articles" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-en="Latest Research" data-it="Ultime Ricerche" data-es="Últimas Investigaciones">Latest Research</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto" data-en="Cutting-edge security research and vulnerability analysis" data-it="Ricerca sulla sicurezza all'avanguardia e analisi delle vulnerabilità" data-es="Investigación de seguridad de vanguardia y análisis de vulnerabilidades">
+          Cutting-edge security research and vulnerability analysis
         </p>
-        <div class="terminal">
-          <div class="terminal-bar">
-            <span class="t-dot t-red"></span>
-            <span class="t-dot t-yellow"></span>
-            <span class="t-dot t-green"></span>
-            <span class="t-title mono">~/nullsec</span>
-          </div>
-          <div class="terminal-body">
-            <div class="t-line"><span class="t-prompt">$</span> <span class="mono t-cmd">whoami</span></div>
-            <div class="t-line"><span class="mono t-out">security_researcher</span></div>
-            <div class="t-line t-gap"><span class="t-prompt">$</span> <span class="mono t-cmd">cat mission.txt</span></div>
-            <div class="t-line"><span class="mono t-out">offensive mindset · defensive purpose</span></div>
-            <div class="t-line t-gap"><span class="t-prompt">$</span> <span class="mono t-cmd cursor-blink">_</span></div>
-          </div>
-        </div>
       </div>
 
-      <!-- Right: Stat Cards -->
-      <div class="hero-right">
-        <div class="stat-card stat-green">
-          <div class="stat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <!-- Swiper Carousel -->
+      <div class="swiper articlesSwiper" data-aos="fade-up" data-aos-delay="200">
+        <div class="swiper-wrapper">
+          <!-- Article 1 -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full uppercase tracking-wider">Web Security</span>
+                <span class="text-xs text-gray-500 mono">5 min read</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">Advanced XSS Techniques in Modern Web Apps</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Exploring sophisticated cross-site scripting attacks and their impact on contemporary web applications.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">Dec 2024</span>
+                <a href="article1.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors duration-200">Read More →</a>
+              </div>
+            </div>
           </div>
-          <div class="stat-value">48</div>
-          <div class="stat-label mono" data-en="Articles Published" data-it="Articoli Pubblicati" data-es="Artículos Publicados">Articles Published</div>
-          <div class="stat-sub">+12 this year</div>
+
+          <!-- Article 2 -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full uppercase tracking-wider">Network</span>
+                <span class="text-xs text-gray-500 mono">8 min read</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">Zero-Day Exploitation: A Deep Dive</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Analyzing real-world zero-day vulnerabilities and their exploitation techniques.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">Nov 2024</span>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full uppercase tracking-wider">Cryptography</span>
+                <span class="text-xs text-gray-500 mono">6 min read</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">Breaking Modern Encryption</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Examining vulnerabilities in contemporary cryptographic implementations.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">Oct 2024</span>
+                <a href="#" class="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors duration-200">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full uppercase tracking-wider">Mobile</span>
+                <span class="text-xs text-gray-500 mono">7 min read</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">Android Security Research</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Deep analysis of Android platform vulnerabilities and exploitation techniques.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">Sep 2024</span>
+                <a href="#" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors duration-200">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full uppercase tracking-wider">Cloud</span>
+                <span class="text-xs text-gray-500 mono">9 min read</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">Cloud Security Misconfigurations</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Common cloud security pitfalls and how attackers exploit them.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">Aug 2024</span>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="swiper-slide">
+            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full uppercase tracking-wider">IoT</span>
+                <span class="text-xs text-gray-500 mono">4 min read</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-white">IoT Device Vulnerabilities</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Security challenges in Internet of Things ecosystems.</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">Jul 2024</span>
+                <a href="#" class="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors duration-200">Read More →</a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="stat-card stat-blue">
-          <div class="stat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <div class="stat-value">9</div>
-          <div class="stat-label mono" data-en="Categories" data-it="Categorie" data-es="Categorías">Categories</div>
-          <div class="stat-sub">web · malware · forensics…</div>
-        </div>
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next !text-emerald-400 hover:!text-emerald-300 !w-12 !h-12 !right-4"></div>
+        <div class="swiper-button-prev !text-emerald-400 hover:!text-emerald-300 !w-12 !h-12 !left-4"></div>
 
-        <div class="stat-card stat-purple">
-          <div class="stat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="stat-value">2025</div>
-          <div class="stat-label mono" data-en="Active Since" data-it="Attivo Dal" data-es="Activo Desde">Active Since</div>
-          <div class="stat-sub">est. January 2025</div>
-        </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination !bottom-0 mt-8"></div>
       </div>
-
     </div>
   </section>
 
-  <!-- DIVIDER -->
-  <div class="section-divider">
-    <div class="container">
-      <div class="divider-line"></div>
-    </div>
-  </div>
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-lg flex items-center justify-center">
+              <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <span class="text-xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Davi</span>
+          </div>
+          <p class="text-gray-400 mb-4" data-en="Offensive mindset · Defensive purpose" data-it="Mentalità offensiva · Scopo difensivo" data-es="Mentalidad ofensiva · Propósito defensivo">
+            Offensive mindset · Defensive purpose
+          </p>
+          <p class="text-sm text-gray-500" data-en="In-depth cybersecurity research and analysis" data-it="Ricerca e analisi approfondita sulla cybersecurity" data-es="Investigación y análisis profundos de ciberseguridad">
+            In-depth cybersecurity research and analysis
+          </p>
+        </div>
 
-  <!-- ARTICLES -->
-  <section class="articles">
-    <div class="container">
-      <div class="section-header">
+        <!-- Links -->
         <div>
-          <span class="section-tag mono" data-en="Latest Research" data-it="Ultime Ricerche" data-es="Últimas Investigaciones">Latest Research</span>
-          <h2 class="section-title" data-en="Recent Posts" data-it="Post Recenti" data-es="Publicaciones Recientes">Recent Posts</h2>
+          <h3 class="text-white font-semibold mb-4" data-en="Quick Links" data-it="Link Rapidi" data-es="Enlaces Rápidos">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-emerald-400 transition-colors duration-200" data-en="Research" data-it="Ricerca" data-es="Investigación">Research</a></li>
+            <li><a href="tools.html" class="text-gray-400 hover:text-emerald-400 transition-colors duration-200" data-en="Tools" data-it="Strumenti" data-es="Herramientas">Tools</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-emerald-400 transition-colors duration-200" data-en="About" data-it="Chi Sono" data-es="Acerca de">About</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-emerald-400 transition-colors duration-200" data-en="RSS Feed" data-it="Feed RSS" data-es="Feed RSS">RSS Feed</a></li>
+          </ul>
         </div>
-        <a href="#" class="btn-ghost mono" data-en="View all →" data-it="Vedi tutti →" data-es="Ver todos →">View all →</a>
-      </div>
 
-      <div class="articles-grid">
-
-        <article class="article-card featured-card">
-          <div class="card-accent card-accent-green"></div>
-          <div class="card-inner">
-            <div class="card-meta">
-              <span class="tag tag-red">CVE</span>
-              <span class="tag tag-blue">Web Security</span>
-              <time class="mono card-date">Jun 12, 2025</time>
-            </div>
-            <h3 class="card-title">Exploiting SSRF in Modern Cloud Architectures: A Deep Dive</h3>
-            <p class="card-excerpt">How attackers chain SSRF vulnerabilities to pivot through IMDSv1 endpoints and exfiltrate IAM credentials from AWS environments.</p>
-            <div class="card-footer">
-              <a href="#" class="card-link mono" data-en="Read more →" data-it="Leggi →" data-es="Leer →">Read more →</a>
-              <span class="read-time mono">8 min read</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="card-accent card-accent-blue"></div>
-          <div class="card-inner">
-            <div class="card-meta">
-              <span class="tag tag-purple">Malware</span>
-              <span class="tag tag-blue">Reverse Engineering</span>
-              <time class="mono card-date">Jun 05, 2025</time>
-            </div>
-            <h3 class="card-title">Unpacking a Loader: Static Analysis Without a Sandbox</h3>
-            <p class="card-excerpt">Step-by-step walkthrough of manually unpacking an obfuscated .NET loader using dnSpy and de4dot.</p>
-            <div class="card-footer">
-              <a href="#" class="card-link mono">Read more →</a>
-              <span class="read-time mono">11 min read</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="card-accent card-accent-purple"></div>
-          <div class="card-inner">
-            <div class="card-meta">
-              <span class="tag tag-green">CTF</span>
-              <span class="tag tag-blue">Forensics</span>
-              <time class="mono card-date">May 28, 2025</time>
-            </div>
-            <h3 class="card-title">Memory Forensics: Extracting Credentials from LSASS Dumps</h3>
-            <p class="card-excerpt">Hands-on guide to analyzing memory dumps with Volatility 3 and identifying credential caches in Windows environments.</p>
-            <div class="card-footer">
-              <a href="#" class="card-link mono">Read more →</a>
-              <span class="read-time mono">9 min read</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="card-accent card-accent-green"></div>
-          <div class="card-inner">
-            <div class="card-meta">
-              <span class="tag tag-blue">Red Team</span>
-              <span class="tag tag-purple">Active Directory</span>
-              <time class="mono card-date">May 18, 2025</time>
-            </div>
-            <h3 class="card-title">Kerberoasting at Scale: Beyond the Basics</h3>
-            <p class="card-excerpt">Advanced Kerberoasting techniques including AS-REP roasting, targeted SPN enumeration, and hash cracking optimizations.</p>
-            <div class="card-footer">
-              <a href="#" class="card-link mono">Read more →</a>
-              <span class="read-time mono">14 min read</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="card-accent card-accent-blue"></div>
-          <div class="card-inner">
-            <div class="card-meta">
-              <span class="tag tag-red">CVE</span>
-              <span class="tag tag-green">Linux</span>
-              <time class="mono card-date">May 10, 2025</time>
-            </div>
-            <h3 class="card-title">CVE-2025-0215: Local Privilege Escalation in the Linux Kernel</h3>
-            <p class="card-excerpt">Technical breakdown of a race condition vulnerability in the io_uring subsystem and its exploitation on Ubuntu 24.04.</p>
-            <div class="card-footer">
-              <a href="#" class="card-link mono">Read more →</a>
-              <span class="read-time mono">16 min read</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <div class="card-accent card-accent-purple"></div>
-          <div class="card-inner">
-            <div class="card-meta">
-              <span class="tag tag-purple">OSINT</span>
-              <span class="tag tag-blue">Recon</span>
-              <time class="mono card-date">Apr 29, 2025</time>
-            </div>
-            <h3 class="card-title">Building a Passive Recon Pipeline with Open Source Tools</h3>
-            <p class="card-excerpt">Automate subdomain enumeration, port scanning and exposure analysis using a composable shell-based workflow.</p>
-            <div class="card-footer">
-              <a href="#" class="card-link mono">Read more →</a>
-              <span class="read-time mono">7 min read</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider">
-    <div class="container">
-      <div class="divider-line"></div>
-    </div>
-  </div>
-
-  <!-- CATEGORIES STRIP -->
-  <section class="categories">
-    <div class="container">
-      <div class="categories-inner">
-        <span class="cat-label mono" data-en="Topics:" data-it="Argomenti:" data-es="Temas:">Topics:</span>
-        <div class="cat-pills">
-          <a href="#" class="cat-pill">Web Security</a>
-          <a href="#" class="cat-pill">Malware Analysis</a>
-          <a href="#" class="cat-pill">Active Directory</a>
-          <a href="#" class="cat-pill">CTF Writeups</a>
-          <a href="#" class="cat-pill">Forensics</a>
-          <a href="#" class="cat-pill">Red Teaming</a>
-          <a href="#" class="cat-pill">OSINT</a>
-          <a href="#" class="cat-pill">Reverse Engineering</a>
-          <a href="#" class="cat-pill">Linux Security</a>
+        <!-- Social -->
+        <div>
+          <h3 class="text-white font-semibold mb-4" data-en="Connect" data-it="Connetti" data-es="Conectar">Connect</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200">Twitter</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200">GitHub</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200">LinkedIn</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200" data-en="Contact" data-it="Contatto" data-es="Contacto">Contact</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="#" class="logo footer-logo">
-          <span class="logo-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </span>
-          NullSec
-        </a>
-        <p class="footer-tagline mono" data-en="Offensive mindset. Defensive purpose." data-it="Mentalità offensiva. Scopo difensivo." data-es="Mentalidad ofensiva. Propósito defensivo.">Offensive mindset. Defensive purpose.</p>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p class="text-gray-500 text-sm" data-en="© 2024 DAVI. All rights reserved." data-it="© 2024 DAVI. Tutti i diritti riservati." data-es="© 2024 DAVI. Todos los derechos reservados.">
+          © 2024 DAVI. All rights reserved.
+        </p>
       </div>
-      <div class="footer-links">
-        <a href="#" class="footer-link">GitHub</a>
-        <a href="#" class="footer-link">Twitter</a>
-        <a href="#" class="footer-link">RSS</a>
-        <a href="#" class="footer-link">Contact</a>
-      </div>
-      <p class="footer-copy mono">© 2025 NullSec · <span data-en="All rights reserved" data-it="Tutti i diritti riservati" data-es="Todos los derechos reservados">All rights reserved</span></p>
     </div>
   </footer>
 
+  <!-- Initialize AOS and Swiper -->
   <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Initialize Swiper
+    const articlesSwiper = new Swiper('.articlesSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // Language switching functionality
     function switchLang(lang) {
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
+      // Update active button
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.remove('text-emerald-400');
+        btn.classList.add('text-gray-400');
       });
+      document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+      document.querySelector(`[data-lang="${lang}"]`).classList.remove('text-gray-400');
+      document.querySelector(`[data-lang="${lang}"]`).classList.add('text-emerald-400');
+
+      // Update all elements with data attributes
+      document.querySelectorAll('[data-en], [data-it], [data-es]').forEach(element => {
+        const text = element.getAttribute(`data-${lang}`);
+        if (text) {
+          // Handle different element types
+          if (element.tagName === 'TITLE') {
+            document.title = text;
+          } else if (element.tagName === 'INPUT' && element.type === 'submit') {
+            element.value = text;
+          } else {
+            element.textContent = text;
+          }
+        }
+      });
+
+      // Store language preference
+      localStorage.setItem('preferred-language', lang);
     }
+
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('preferred-language') || 'en';
+      switchLang(savedLang);
+    });
   </script>
 
 </body>
+
 </html>
