@@ -8,6 +8,7 @@ export default defineConfig({
   appearance: 'force-dark',
 
   head: [
+    ['link', { rel: 'icon', type: 'image/png', href: '/icon.png' }],
     // CSP — restricts resource loading to prevent XSS and data injection
     ['meta', {
       'http-equiv': 'Content-Security-Policy',
