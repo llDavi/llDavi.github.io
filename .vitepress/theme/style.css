@@ -1,0 +1,181 @@
+/* ── PALETTE ─────────────────────────────────────────────── */
+:root {
+  --vp-c-brand-1:       #a371f7;
+  --vp-c-brand-2:       #bc8cff;
+  --vp-c-brand-3:       #7c3aed;
+  --vp-c-brand-soft:    rgba(163, 113, 247, 0.14);
+
+  --purple:             #a371f7;
+  --purple-muted:       rgba(163, 113, 247, 0.12);
+  --purple-border:      rgba(163, 113, 247, 0.35);
+  --purple-glow:        rgba(163, 113, 247, 0.25);
+  --green:              #3fb950;
+  --green-muted:        rgba(63, 185, 80, 0.12);
+  --green-border:       rgba(63, 185, 80, 0.35);
+}
+
+.dark {
+  --vp-c-bg:            #0d1117;
+  --vp-c-bg-soft:       #161b22;
+  --vp-c-bg-mute:       #1c2128;
+  --vp-c-border:        #30363d;
+  --vp-c-divider:       #21262d;
+  --vp-c-text-1:        #c9d1d9;
+  --vp-c-text-2:        #8b949e;
+  --vp-c-text-3:        #484f58;
+}
+
+/* ── FONTS ───────────────────────────────────────────────── */
+:root {
+  --vp-font-family-base:  'Inter', system-ui, sans-serif;
+  --vp-font-family-mono:  'JetBrains Mono', monospace;
+}
+
+/* ── NAVBAR ──────────────────────────────────────────────── */
+.dark .VPNav {
+  background: rgba(13, 17, 23, 0.85) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #30363d;
+}
+
+/* Logo */
+.VPNavBarTitle .title {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+  color: var(--vp-c-text-1) !important;
+}
+
+/* "Book" button in nav */
+.VPNavBarMenuLink[href*="generic-methodologies"],
+.vp-nav-book {
+  color: var(--green) !important;
+  border: 1px solid var(--green-border);
+  border-radius: 6px;
+  padding: 0.35rem 0.9rem;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+.dark .VPSidebar {
+  background: #0d1117 !important;
+  border-right: 1px solid #30363d;
+}
+
+.VPSidebarItem.is-active > .item .link .text,
+.VPSidebarItem.is-active > .item .text {
+  color: var(--green) !important;
+}
+
+.VPSidebarItem .link:hover .text {
+  color: var(--purple) !important;
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--purple) !important;
+}
+
+/* ── CONTENT ─────────────────────────────────────────────── */
+.dark .VPDoc {
+  background: transparent;
+}
+
+.dark .vp-doc h1,
+.dark .vp-doc h2,
+.dark .vp-doc h3,
+.dark .vp-doc h4 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--purple);
+  letter-spacing: -0.03em;
+}
+
+.dark .vp-doc h2 {
+  border-top: 1px solid #30363d;
+}
+
+.dark .vp-doc a {
+  color: var(--purple) !important;
+}
+
+.dark .vp-doc a:hover {
+  color: var(--vp-c-brand-2) !important;
+}
+
+.dark .vp-doc code {
+  background: #161b22;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+}
+
+.dark .vp-doc div[class*="language-"] {
+  background: #161b22 !important;
+  border: 1px solid #30363d;
+}
+
+/* ── BACKGROUND GRID ─────────────────────────────────────── */
+.dark body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(33, 38, 45, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 38, 45, 0.4) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ── NAV PREV/NEXT ───────────────────────────────────────── */
+.dark .pager-link {
+  border-color: #30363d;
+  background: #161b22;
+}
+
+.dark .pager-link:hover {
+  border-color: var(--purple-border);
+  background: var(--purple-muted);
+}
+
+.dark .pager-link .title {
+  color: var(--purple) !important;
+}
+
+/* ── SEARCH ──────────────────────────────────────────────── */
+.dark .DocSearch-Button {
+  background: #161b22;
+  border: 1px solid #30363d;
+}
+
+/* Move search button to the left of the navbar content area */
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar .content {
+    z-index: 3 !important;
+    padding-left: 24px !important;
+  }
+
+  /* Keep content-body transparent so the logo underneath stays visible */
+  .VPNavBar.has-sidebar .content-body {
+    background: transparent !important;
+  }
+}
+
+.VPNavBar .content-body .search {
+  margin-right: auto;
+}
+
+/* ── SCROLLBAR ───────────────────────────────────────────── */
+.dark ::-webkit-scrollbar { width: 6px; height: 6px; }
+.dark ::-webkit-scrollbar-track { background: #0d1117; }
+.dark ::-webkit-scrollbar-thumb { background: #484f58; border-radius: 3px; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #8b949e; }
+
+/* ── FORCE DARK always ───────────────────────────────────── */
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}

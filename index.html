@@ -1,384 +1,737 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-en="Davi — Cybersecurity Enthusiast" data-it="Davi — Appassionato di Cybersecurity" data-es="Davi — Entusiasta de Ciberseguridad">Davi — Cybersecurity Enthusiast</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Swiper.js -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- AOS (Animate On Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .mono { font-family: 'JetBrains Mono', monospace; }
-  </style>
-</head>
-
-<body class="bg-gray-900 text-white min-h-screen">
-
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-lg border-b border-gray-800 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <!-- Logo -->
-        <a href="#" class="flex items-center space-x-3 group">
-          <div class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-            <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <span class="text-xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Davi</span>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="text-gray-300 hover:text-emerald-400 transition-colors duration-200 font-medium">Research</a>
-          <a href="tools.html" class="text-gray-300 hover:text-emerald-400 transition-colors duration-200 font-medium">Tools</a>
-          <a href="about.html" class="text-gray-300 hover:text-emerald-400 transition-colors duration-200 font-medium">About</a>
-        </div>
-
-        <!-- Language Switch -->
-        <div class="flex items-center space-x-4">
-          <div class="hidden sm:flex items-center space-x-1 bg-gray-800 rounded-lg p-1">
-            <button class="lang-btn active px-3 py-1 text-xs font-medium text-gray-400 hover:text-emerald-400 rounded-md transition-colors duration-200" data-lang="en" onclick="switchLang('en')">EN</button>
-            <span class="text-gray-600">·</span>
-            <button class="lang-btn px-3 py-1 text-xs font-medium text-gray-400 hover:text-emerald-400 rounded-md transition-colors duration-200" data-lang="it" onclick="switchLang('it')">IT</button>
-            <span class="text-gray-600">·</span>
-            <button class="lang-btn px-3 py-1 text-xs font-medium text-gray-400 hover:text-emerald-400 rounded-md transition-colors duration-200" data-lang="es" onclick="switchLang('es')">ES</button>
-          </div>
-
-          <a href="#" class="hidden sm:inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-900 font-semibold rounded-lg hover:from-emerald-400 hover:to-cyan-400 transition-all duration-200 transform hover:scale-105">
-            RSS Feed
-          </a>
-
-          <!-- Mobile menu button -->
-          <button class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors duration-200">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
-        <!-- Hero Content -->
-        <div class="space-y-8">
-          <div class="flex items-center space-x-3" data-aos="fade-right" data-aos-delay="100">
-            <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-            <span class="text-emerald-400 font-medium text-sm uppercase tracking-wider" data-en="Security Research & Analysis" data-it="Ricerca & Analisi di Sicurezza" data-es="Investigación & Análisis de Seguridad">Security Research & Analysis</span>
-          </div>
-
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" data-aos="fade-up" data-aos-delay="200">
-            <span data-en="Thinking Like" data-it="Pensare Come" data-es="Pensar Como">Thinking Like</span>
-            <span class="bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">the Attacker</span>
-          </h1>
-
-          <p class="text-lg text-gray-300 leading-relaxed max-w-lg" data-aos="fade-up" data-aos-delay="300" data-en="In-depth research on vulnerabilities, exploit techniques, and defensive strategies. No noise, just signal." data-it="Ricerche approfondite su vulnerabilità, tecniche di exploit e strategie difensive. Niente rumore, solo segnale." data-es="Investigación en profundidad sobre vulnerabilidades, técnicas de exploit y estrategias defensivas. Sin ruido, solo señal.">
-            In-depth research on vulnerabilities, exploit techniques, and defensive strategies. No noise, just signal.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400">
-            <a href="#articles" class="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-900 font-semibold rounded-xl hover:from-emerald-400 hover:to-cyan-400 transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25">
-              Explore Research
-            </a>
-            <a href="tools.html" class="inline-flex items-center justify-center px-8 py-3 border border-gray-700 text-gray-300 font-semibold rounded-xl hover:border-emerald-400 hover:text-emerald-400 transition-all duration-200">
-              View Tools
-            </a>
-          </div>
-        </div>
-
-        <!-- Hero Stats -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" data-aos="fade-left" data-aos-delay="300">
-          <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/10">
-            <div class="text-3xl font-bold text-emerald-400 mb-2" data-en="50+" data-it="50+" data-es="50+">50+</div>
-            <div class="text-sm text-gray-400 uppercase tracking-wider" data-en="Research Papers" data-it="Articoli Ricerca" data-es="Artículos Investigación">Research Papers</div>
-          </div>
-
-          <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10">
-            <div class="text-3xl font-bold text-cyan-400 mb-2" data-en="CVE" data-it="CVE" data-es="CVE">CVE</div>
-            <div class="text-sm text-gray-400 uppercase tracking-wider" data-en="Discovered" data-it="Scoperti" data-es="Descubiertos">Discovered</div>
-          </div>
-
-          <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10">
-            <div class="text-3xl font-bold text-purple-400 mb-2" data-en="10K+" data-it="10K+" data-es="10K+">10K+</div>
-            <div class="text-sm text-gray-400 uppercase tracking-wider" data-en="Readers" data-it="Lettori" data-es="Lectores">Readers</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Articles Carousel -->
-  <section id="articles" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-en="Latest Research" data-it="Ultime Ricerche" data-es="Últimas Investigaciones">Latest Research</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto" data-en="Cutting-edge security research and vulnerability analysis" data-it="Ricerca sulla sicurezza all'avanguardia e analisi delle vulnerabilità" data-es="Investigación de seguridad de vanguardia y análisis de vulnerabilidades">
-          Cutting-edge security research and vulnerability analysis
-        </p>
-      </div>
-
-      <!-- Swiper Carousel -->
-      <div class="swiper articlesSwiper" data-aos="fade-up" data-aos-delay="200">
-        <div class="swiper-wrapper">
-          <!-- Article 1 -->
-          <div class="swiper-slide">
-            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/10">
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full uppercase tracking-wider">Web Security</span>
-                <span class="text-xs text-gray-500 mono">5 min read</span>
-              </div>
-              <h3 class="text-xl font-bold mb-3 text-white">Advanced XSS Techniques in Modern Web Apps</h3>
-              <p class="text-gray-400 text-sm leading-relaxed mb-4">Exploring sophisticated cross-site scripting attacks and their impact on contemporary web applications.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500">Dec 2024</span>
-                <a href="article1.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors duration-200">Read More →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Article 2 -->
-          <div class="swiper-slide">
-            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10">
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full uppercase tracking-wider">Network</span>
-                <span class="text-xs text-gray-500 mono">8 min read</span>
-              </div>
-              <h3 class="text-xl font-bold mb-3 text-white">Zero-Day Exploitation: A Deep Dive</h3>
-              <p class="text-gray-400 text-sm leading-relaxed mb-4">Analyzing real-world zero-day vulnerabilities and their exploitation techniques.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500">Nov 2024</span>
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200">Read More →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Article 3 -->
-          <div class="swiper-slide">
-            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10">
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full uppercase tracking-wider">Cryptography</span>
-                <span class="text-xs text-gray-500 mono">6 min read</span>
-              </div>
-              <h3 class="text-xl font-bold mb-3 text-white">Breaking Modern Encryption</h3>
-              <p class="text-gray-400 text-sm leading-relaxed mb-4">Examining vulnerabilities in contemporary cryptographic implementations.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500">Oct 2024</span>
-                <a href="#" class="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors duration-200">Read More →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Article 4 -->
-          <div class="swiper-slide">
-            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/10">
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full uppercase tracking-wider">Mobile</span>
-                <span class="text-xs text-gray-500 mono">7 min read</span>
-              </div>
-              <h3 class="text-xl font-bold mb-3 text-white">Android Security Research</h3>
-              <p class="text-gray-400 text-sm leading-relaxed mb-4">Deep analysis of Android platform vulnerabilities and exploitation techniques.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500">Sep 2024</span>
-                <a href="#" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors duration-200">Read More →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Article 5 -->
-          <div class="swiper-slide">
-            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10">
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full uppercase tracking-wider">Cloud</span>
-                <span class="text-xs text-gray-500 mono">9 min read</span>
-              </div>
-              <h3 class="text-xl font-bold mb-3 text-white">Cloud Security Misconfigurations</h3>
-              <p class="text-gray-400 text-sm leading-relaxed mb-4">Common cloud security pitfalls and how attackers exploit them.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500">Aug 2024</span>
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200">Read More →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Article 6 -->
-          <div class="swiper-slide">
-            <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 h-full hover:bg-gray-800/70 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10">
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full uppercase tracking-wider">IoT</span>
-                <span class="text-xs text-gray-500 mono">4 min read</span>
-              </div>
-              <h3 class="text-xl font-bold mb-3 text-white">IoT Device Vulnerabilities</h3>
-              <p class="text-gray-400 text-sm leading-relaxed mb-4">Security challenges in Internet of Things ecosystems.</p>
-              <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500">Jul 2024</span>
-                <a href="#" class="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors duration-200">Read More →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Navigation buttons -->
-        <div class="swiper-button-next !text-emerald-400 hover:!text-emerald-300 !w-12 !h-12 !right-4"></div>
-        <div class="swiper-button-prev !text-emerald-400 hover:!text-emerald-300 !w-12 !h-12 !left-4"></div>
-
-        <!-- Pagination -->
-        <div class="swiper-pagination !bottom-0 mt-8"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8">
-        <!-- Brand -->
-        <div class="md:col-span-2">
-          <div class="flex items-center space-x-3 mb-4">
-            <div class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-lg flex items-center justify-center">
-              <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-            <span class="text-xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Davi</span>
-          </div>
-          <p class="text-gray-400 mb-4" data-en="Offensive mindset · Defensive purpose" data-it="Mentalità offensiva · Scopo difensivo" data-es="Mentalidad ofensiva · Propósito defensivo">
-            Offensive mindset · Defensive purpose
-          </p>
-          <p class="text-sm text-gray-500" data-en="In-depth cybersecurity research and analysis" data-it="Ricerca e analisi approfondita sulla cybersecurity" data-es="Investigación y análisis profundos de ciberseguridad">
-            In-depth cybersecurity research and analysis
-          </p>
-        </div>
-
-        <!-- Links -->
-        <div>
-          <h3 class="text-white font-semibold mb-4" data-en="Quick Links" data-it="Link Rapidi" data-es="Enlaces Rápidos">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="index.html" class="text-gray-400 hover:text-emerald-400 transition-colors duration-200" data-en="Research" data-it="Ricerca" data-es="Investigación">Research</a></li>
-            <li><a href="tools.html" class="text-gray-400 hover:text-emerald-400 transition-colors duration-200" data-en="Tools" data-it="Strumenti" data-es="Herramientas">Tools</a></li>
-            <li><a href="about.html" class="text-gray-400 hover:text-emerald-400 transition-colors duration-200" data-en="About" data-it="Chi Sono" data-es="Acerca de">About</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-emerald-400 transition-colors duration-200" data-en="RSS Feed" data-it="Feed RSS" data-es="Feed RSS">RSS Feed</a></li>
-          </ul>
-        </div>
-
-        <!-- Social -->
-        <div>
-          <h3 class="text-white font-semibold mb-4" data-en="Connect" data-it="Connetti" data-es="Conectar">Connect</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200">Twitter</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200">GitHub</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200">LinkedIn</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200" data-en="Contact" data-it="Contatto" data-es="Contacto">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-        <p class="text-gray-500 text-sm" data-en="© 2024 DAVI. All rights reserved." data-it="© 2024 DAVI. Tutti i diritti riservati." data-es="© 2024 DAVI. Todos los derechos reservados.">
-          © 2024 DAVI. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Initialize AOS and Swiper -->
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 100
-    });
-
-    // Initialize Swiper
-    const articlesSwiper = new Swiper('.articlesSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-        1280: {
-          slidesPerView: 4,
-          spaceBetween: 30,
-        },
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-    });
-
-    // Language switching functionality
-    function switchLang(lang) {
-      // Update active button
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        btn.classList.remove('text-emerald-400');
-        btn.classList.add('text-gray-400');
-      });
-      document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
-      document.querySelector(`[data-lang="${lang}"]`).classList.remove('text-gray-400');
-      document.querySelector(`[data-lang="${lang}"]`).classList.add('text-emerald-400');
-
-      // Update all elements with data attributes
-      document.querySelectorAll('[data-en], [data-it], [data-es]').forEach(element => {
-        const text = element.getAttribute(`data-${lang}`);
-        if (text) {
-          // Handle different element types
-          if (element.tagName === 'TITLE') {
-            document.title = text;
-          } else if (element.tagName === 'INPUT' && element.type === 'submit') {
-            element.value = text;
-          } else {
-            element.textContent = text;
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi — Hacking, one page at a time.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-      });
 
-      // Store language preference
-      localStorage.setItem('preferred-language', lang);
-    }
+        :root {
+            --bg:              #0d1117;
+            --surface:         #161b22;
+            --surface-2:       #1c2128;
+            --border:          #30363d;
+            --border-muted:    #21262d;
+            --fg:              #c9d1d9;
+            --fg-muted:        #8b949e;
+            --fg-subtle:       #484f58;
+            --purple:          #a371f7;
+            --purple-muted:    rgba(163, 113, 247, 0.12);
+            --purple-border:   rgba(163, 113, 247, 0.35);
+            --purple-glow:     rgba(163, 113, 247, 0.25);
+            --green:           #3fb950;
+            --green-muted:     rgba(63, 185, 80, 0.12);
+            --green-border:    rgba(63, 185, 80, 0.35);
+        }
 
-    // Initialize language on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      const savedLang = localStorage.getItem('preferred-language') || 'en';
-      switchLang(savedLang);
-    });
-  </script>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Subtle grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border-muted) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-muted) 1px, transparent 1px);
+            background-size: 64px 64px;
+            opacity: 0.35;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ── NAVBAR ──────────────────────────────────────────── */
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(13, 17, 23, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2.5rem;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--fg);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+            display: flex;
+            align-items: center;
+            gap: 1px;
+        }
+
+        .nav-logo .accent { color: var(--purple); }
+        .nav-logo .dot    { color: var(--green);  }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--fg-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.4rem 0.85rem;
+            border-radius: 6px;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--fg);
+            background: var(--surface);
+        }
+
+        .nav-links .nav-book {
+            color: var(--green);
+            border: 1px solid var(--green-border);
+            padding: 0.4rem 1rem;
+            margin-left: 0.5rem;
+            transition: background 0.2s, color 0.2s, transform 0.15s;
+        }
+
+        .nav-links .nav-book:hover {
+            background: var(--green-muted);
+            color: var(--green);
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ────────────────────────────────────────────── */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10rem 2.5rem 6rem;
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--green);
+            margin-bottom: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 10px var(--green);
+            animation: blink 2.4s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.3; }
+        }
+
+        .hero-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(5.5rem, 16vw, 11rem);
+            font-weight: 800;
+            line-height: 0.9;
+            letter-spacing: -0.05em;
+            color: var(--fg);
+            margin-bottom: 2rem;
+            user-select: none;
+        }
+
+        .hero-title .t-purple { color: var(--purple); }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            color: var(--fg-muted);
+            font-weight: 400;
+            max-width: 580px;
+            margin-bottom: 2.75rem;
+            line-height: 1.75;
+        }
+
+        .hero-tagline strong {
+            color: var(--fg);
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--purple);
+            color: #fff;
+            box-shadow: 0 0 20px var(--purple-glow);
+        }
+
+        .btn-primary:hover {
+            background: #bc8cff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 24px var(--purple-glow);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--fg-muted);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--fg-subtle);
+            color: var(--fg);
+            transform: translateY(-2px);
+        }
+
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--fg-subtle);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.4rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(5px); }
+        }
+
+        /* ── SECTIONS SHARED ─────────────────────────────────── */
+
+        section.content-section {
+            padding: 7rem 2.5rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--purple);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.7rem, 4vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--fg);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ── ABOUT ───────────────────────────────────────────── */
+
+        #about {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .about-avatar-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .about-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: var(--surface-2);
+            border: 2px solid var(--purple-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--fg-subtle);
+            font-size: 3.5rem;
+            overflow: hidden;
+            box-shadow: 0 0 30px var(--purple-glow);
+        }
+
+        .about-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-handle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--fg-subtle);
+        }
+
+        .about-text .section-title { margin-bottom: 1.25rem; }
+
+        .about-text p {
+            color: var(--fg-muted);
+            font-size: 0.97rem;
+            line-height: 1.85;
+            margin-bottom: 1.1rem;
+        }
+
+        .about-text p:last-of-type { margin-bottom: 0; }
+
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: 1.75rem;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            color: var(--fg-muted);
+        }
+
+        .tag.purple {
+            border-color: var(--purple-border);
+            color: var(--purple);
+            background: var(--purple-muted);
+        }
+
+        .tag.green {
+            border-color: var(--green-border);
+            color: var(--green);
+            background: var(--green-muted);
+        }
+
+        /* ── FEATURED ────────────────────────────────────────── */
+
+        #featured {
+            background: var(--bg);
+        }
+
+        .featured-intro {
+            color: var(--fg-muted);
+            font-size: 0.97rem;
+            margin-top: 0.5rem;
+            max-width: 500px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+
+        .featured-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            text-decoration: none;
+            color: var(--fg);
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.25s, transform 0.2s, background 0.25s;
+        }
+
+        .featured-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--purple-muted), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .featured-card:hover {
+            border-color: var(--purple-border);
+            transform: translateY(-4px);
+            background: var(--surface-2);
+        }
+
+        .featured-card:hover::after {
+            opacity: 1;
+        }
+
+        .card-top-bar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--purple), var(--green));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-card:hover .card-top-bar {
+            transform: scaleX(1);
+        }
+
+        .card-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--fg);
+            line-height: 1.35;
+        }
+
+        .card-desc {
+            font-size: 0.86rem;
+            color: var(--fg-muted);
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .card-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--purple);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-top: 0.25rem;
+            transition: gap 0.2s;
+        }
+
+        .featured-card:hover .card-link {
+            gap: 0.6rem;
+        }
+
+        .featured-cta {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* ── FOOTER ──────────────────────────────────────────── */
+
+        footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2.5rem;
+        }
+
+        .footer-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .footer-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .footer-logo .accent { color: var(--purple); }
+        .footer-logo .dot    { color: var(--green);  }
+
+        .footer-tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--fg-subtle);
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 1.25rem;
+            list-style: none;
+        }
+
+        .footer-nav a {
+            color: var(--fg-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-nav a:hover { color: var(--fg); }
+
+        .footer-copy {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--fg-subtle);
+        }
+
+        /* ── RESPONSIVE ──────────────────────────────────────── */
+
+        @media (max-width: 768px) {
+            nav { padding: 0 1.25rem; }
+            .hero { padding: 9rem 1.25rem 5rem; }
+            .hero-title { letter-spacing: -0.04em; }
+            section.content-section { padding: 5rem 1.25rem; }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .about-avatar-wrap { flex-direction: row; align-items: center; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; align-items: flex-start; gap: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links .hide-mobile { display: none; }
+            .hero-title { letter-spacing: -0.03em; }
+            .btn { padding: 0.7rem 1.2rem; font-size: 0.87rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAVBAR ──────────────────────────────────────────── -->
+    <nav>
+        <a href="/" class="nav-logo">
+            <span class="accent">da</span>vi<span class="dot">.</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#" class="hide-mobile">Home</a></li>
+            <li><a href="#about" class="hide-mobile">About</a></li>
+            <li><a href="book/" class="nav-book">
+                <i class="fa fa-book-open" style="font-size:0.8rem;"></i> Book
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- ── HERO ────────────────────────────────────────────── -->
+    <div class="hero">
+        <div class="hero-eyebrow">// security notes &amp; research</div>
+        <h1 class="hero-title">DA<span class="t-purple">VI</span></h1>
+        <p class="hero-tagline">
+            <strong>Hacking, one page at a time.</strong><br>
+            A personal collection of security notes, methodologies, and references —
+            built from CTFs, research, and late nights in the terminal.
+        </p>
+        <div class="hero-cta">
+            <a href="book/" class="btn btn-primary">
+                <i class="fa fa-book-open"></i>
+                Open the Book
+            </a>
+            <a href="#about" class="btn btn-ghost">
+                About Me
+                <i class="fa fa-arrow-down" style="font-size:0.8rem;"></i>
+            </a>
+        </div>
+        <div class="hero-scroll-hint">
+            <i class="fa fa-chevron-down"></i>
+            scroll
+        </div>
+    </div>
+
+    <!-- ── ABOUT ───────────────────────────────────────────── -->
+    <section class="content-section" id="about">
+        <div class="container">
+            <div class="section-eyebrow">// about</div>
+            <div class="about-grid">
+                <div class="about-avatar-wrap">
+                    <div class="about-avatar">
+                        <!-- Replace with: <img src="path/to/your/photo.jpg" alt="Davi"> -->
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="about-handle">@lldavi</div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">Who am I?</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet — placeholder text about who you are.
+                        Describe your background in cybersecurity, what got you into this field,
+                        and what kind of work you do or enjoy most.
+                    </p>
+                    <p>
+                        Placeholder for your experience — CTF competitions, professional engagements,
+                        research interests, or anything you'd like the world to know about you.
+                    </p>
+                    <p>
+                        This site is a living document: security notes, attack methodologies, and
+                        references accumulated over time. Think of it as a public second brain,
+                        not a polished tutorial site.
+                    </p>
+                    <div class="about-tags">
+                        <span class="tag purple">pentesting</span>
+                        <span class="tag purple">CTF player</span>
+                        <span class="tag purple">web security</span>
+                        <span class="tag green">linux</span>
+                        <span class="tag green">active directory</span>
+                        <span class="tag">forensics</span>
+                        <span class="tag">reversing</span>
+                        <span class="tag">cryptography</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FEATURED ────────────────────────────────────────── -->
+    <section class="content-section" id="featured">
+        <div class="container">
+            <div class="section-eyebrow">// from the book</div>
+            <h2 class="section-title">Featured Pages</h2>
+            <p class="featured-intro">A selection of the most essential references in the collection.</p>
+            <div class="featured-grid">
+
+                <a href="book/generic-methodologies-and-resources/pentesting-methodology.html" class="featured-card">
+                    <div class="card-top-bar"></div>
+                    <div class="card-category">methodology</div>
+                    <div class="card-title">Pentesting Methodology</div>
+                    <div class="card-desc">
+                        A structured approach to penetration testing — from initial reconnaissance
+                        and enumeration all the way through exploitation, post-exploitation, and reporting.
+                    </div>
+                    <div class="card-link">read more →</div>
+                </a>
+
+                <a href="book/linux-hardening/privilege-escalation/index.html" class="featured-card">
+                    <div class="card-top-bar"></div>
+                    <div class="card-category">linux · privesc</div>
+                    <div class="card-title">Linux Privilege Escalation</div>
+                    <div class="card-desc">
+                        Comprehensive techniques for escalating privileges on Linux systems —
+                        SUID binaries, sudo misconfigurations, capabilities, cron job abuse, and more.
+                    </div>
+                    <div class="card-link">read more →</div>
+                </a>
+
+                <a href="book/pentesting-web/sql-injection/index.html" class="featured-card">
+                    <div class="card-top-bar"></div>
+                    <div class="card-category">web · injection</div>
+                    <div class="card-title">SQL Injection</div>
+                    <div class="card-desc">
+                        From classic UNION-based SQLi to blind time-based techniques and
+                        out-of-band extraction — a complete reference for one of the most
+                        critical web vulnerabilities.
+                    </div>
+                    <div class="card-link">read more →</div>
+                </a>
+
+                <a href="book/windows-hardening/active-directory-methodology/index.html" class="featured-card">
+                    <div class="card-top-bar"></div>
+                    <div class="card-category">windows · active directory</div>
+                    <div class="card-title">Active Directory Methodology</div>
+                    <div class="card-desc">
+                        Kerberoasting, AS-REP Roasting, DCSync, Pass-the-Hash — the attacker's
+                        handbook for enumerating and compromising Active Directory environments.
+                    </div>
+                    <div class="card-link">read more →</div>
+                </a>
+
+            </div>
+            <div class="featured-cta">
+                <a href="book/" class="btn btn-ghost">
+                    Browse all topics
+                    <i class="fa fa-arrow-right" style="font-size:0.8rem;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ──────────────────────────────────────────── -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="accent">da</span>vi<span class="dot">.</span>
+                </a>
+                <div class="footer-tagline">// hacking, one page at a time.</div>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="book/">Book</a></li>
+            </ul>
+            <div class="footer-copy">© 2025 Davi</div>
+        </div>
+    </footer>
 
 </body>
-
 </html>
