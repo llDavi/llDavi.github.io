@@ -549,8 +549,15 @@
 
         @media (max-width: 768px) {
             nav { padding: 0 1.25rem; }
-            .hero { padding: 9rem 1.25rem 5rem; }
-            .hero-title { letter-spacing: -0.04em; }
+            .hero {
+                min-height: auto;
+                justify-content: flex-start;
+                padding: 5rem 1.25rem 4rem;
+            }
+            .hero-title {
+                font-size: clamp(3.5rem, 18vw, 6rem);
+                letter-spacing: -0.04em;
+            }
             section.content-section { padding: 5rem 1.25rem; }
             .about-grid {
                 grid-template-columns: 1fr;
