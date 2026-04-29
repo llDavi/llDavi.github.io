@@ -4,10 +4,10 @@
     <!-- ── NAVBAR ────────────────────────────────────────── -->
     <nav class="home-nav">
       <a href="/" class="nav-logo">
-        <span class="accent">da</span>vi<span class="dot">.</span><span class="logo-sep"> / </span>ghost in the <span class="accent">wire</span>
+        <span class="accent">da</span>vi<span class="dot">.</span><span class="logo-subtitle"><span class="logo-sep"> / </span>ghost in the <span class="accent">wire</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="/">home</a></li>
+        <li class="hide-mobile"><a href="/">home</a></li>
         <li><a href="#about">il podcast</a></li>
         <li><a href="#featured" class="nav-book">
           <i class="fa fa-headphones"></i> episodi
@@ -212,6 +212,11 @@
   color: var(--fg);
   text-decoration: none !important;
   letter-spacing: -0.03em;
+  white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav-logo .accent   { color: var(--purple); }
@@ -637,12 +642,42 @@
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-content { padding: 9rem 1.25rem 5rem; }
-  .hero-artwork { display: none; }
+  /* Navbar */
+  .home-nav { padding: 0 1rem; }
+  .logo-subtitle { display: none; }
+  .nav-links { gap: 0.1rem; flex-shrink: 0; }
+  .hide-mobile { display: none; }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: auto;
+  }
+  .hero-content { padding: 8rem 1.25rem 3rem; }
+  .hero-artwork {
+    display: block;
+    position: relative;
+    border-left: none;
+    border-top: 1px solid var(--purple-border);
+  }
+  .hero-img {
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Sections */
   .content-section { padding: 5rem 1.25rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-avatar-wrap { flex-direction: row; align-items: center; }
   .featured-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .nav-links a { padding: 0.4rem 0.6rem; font-size: 0.8rem; }
+  .nav-links .nav-book { padding: 0.4rem 0.75rem; margin-left: 0.25rem; }
+  .hero-img { max-width: 100%; }
 }
 </style>
